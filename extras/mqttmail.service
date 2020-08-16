@@ -1,0 +1,13 @@
+# Sample /etc/systemd/system/mqttmail.service file.
+[Unit]
+Description=MQTT mailer program
+After=network.target
+
+[Service]
+Type=simple
+User=pi
+ExecStart=/home/pi/mqttmail.py --broker ??? --topic ???
+Restart=on-abort
+
+[Install]
+WantedBy=multi-user.target
